@@ -860,21 +860,36 @@
 
 .ins-card {
     background: #ffe6a3;
-    padding: 20px;
+    padding: 15px 25px; /* Giảm padding một chút cho gọn */
     border-radius: 20px;
     text-decoration: none;
     color: #694403;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border: 3px solid #694403;
     transition: 0.3s ease;
+    
+    /* CĂN CHỈNH LOGO VÀ CHỮ */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung */
+    gap: 12px; /* Khoảng cách giữa logo và chữ */
+}
+
+/* ĐÂY LÀ PHẦN KHỐNG CHẾ SIZE LOGO */
+.ins-card img {
+    width: 30px;  /* Bạn có thể chỉnh 25px hoặc 35px tùy ý */
+    height: 30px;
+    object-fit: contain; /* Giữ đúng tỷ lệ logo không bị méo */
 }
 
 .ins-card:hover {
     transform: translateY(-5px);
     background: white;
+    box-shadow: 6px 6px 0px #694403; /* Thêm bóng đổ cho vibe Dashbud */
 }
 
+/* Divider cho xinh */
 .ins-divider {
     height: 4px;
     background: repeating-linear-gradient(90deg, #694403, #694403 10px, transparent 10px, transparent 20px);
