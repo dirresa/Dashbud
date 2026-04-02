@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Dashboard - Dashbud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #ffcffc;"> <div class="dashboard-container">
+        <h2 class="section-title">Hi, Productive Bud!</h2>
+
+        <div class="char-picker">
+            <h3>Choose your buddy:</h3>
+            <div class="char-options">
+                <div class="char-item active" onclick="selectChar(this, 'assets/BeeSprite.png')"><span>A</span></div>
+                <div class="char-item" onclick="selectChar(this, 'assets/BearSprite.png')"><span>B</span></div>
+                <div class="char-item" onclick="selectChar(this, 'assets/CatSprite1.png')"><span>C</span></div>
+                <div class="char-item" onclick="selectChar(this, 'assets/BunnySprite.png')"><span>D</span></div>
+                <div class="char-item" onclick="selectChar(this, 'assets/CatSprite2.png')"><span>E</span></div>
+            </div>
+        </div>
+
+        <div class="main-display">
+            <div class="current-pet">
+                <img id="mainPet" src="assets/BeeSprite.png" alt="Your Pet">
+            </div>
+
+            <div class="stats-box">
+                <p>Productivity Level: <span id="percentText">0%</span></p>
+                <div class="progress-container">
+                    <div id="myBar" class="progress-bar"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" id="wordCount" placeholder="Enter words written today...">
+                    <button onclick="updateProgress()" class="cta-btn" style="margin-top:0">Update</button>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" style="color: #694403; display: block; margin-top: 20px;">← Back to Home</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
