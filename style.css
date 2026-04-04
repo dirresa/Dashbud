@@ -5,6 +5,10 @@
     font-family: "Courier New", sans-serif;
 }
 
+.section-title{
+    color: #694403;
+}
+
 /* NAVBAR */
 .navbar {
     width: 100%;
@@ -44,7 +48,6 @@
 
 .navbar nav a:hover {
     color: #ffcffc;
-    text-decoration: underline;
 }
 
 .logo img {
@@ -131,15 +134,94 @@
     object-fit: contain;
     display: block;
 }
-/* FIX RIÊNG CHO MOBILE */
+/* FIX RESPONSIVE CHO MOBILE */
 @media (max-width: 768px) {
-    .hero-image {
-        height: auto;
-        margin-top: 20px;
+    .hero {
+        flex-direction: column; /* Chữ trên, hình dưới */
+        height: auto; /* Bỏ cố định 80vh để không bị tràn */
+        padding: 60px 20px; /* Giảm padding cho đỡ chật */
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
-    
+
+    .hero-text {
+        max-width: 100%; /* Chữ chiếm hết chiều ngang */
+        margin-bottom: 40px;
+        align-items: center; /* Căn giữa button */
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto; /* Quan trọng: Bỏ height 100% */
+        justify-content: center;
+        flex: none;
+    }
+
     .circle-photo {
-        max-width: 300px; /* Trên mobile thì cho pet nhỏ lại xíu cho cân đối */
+        width: 80%; /* Chiếm 80% chiều rộng màn hình điện thoại */
+        max-width: 350px; /* Không được to quá 350px */
+        height: auto; /* Để chiều cao tự nhảy theo chiều rộng */
+        mask-image: none; /* Tắt mask trên mobile nhìn cho rõ con pet */
+        -webkit-mask-image: none;
+    }
+
+    .circle-photo img {
+        width: 100%; /* Ép ảnh chạy theo chiều rộng của div mẹ */
+        height: auto; /* Bỏ height 100% cũ */
+        object-fit: contain;
+    }
+}
+
+/* VIDEO SHOWCASE SECTION */
+.video-showcase {
+    padding: 80px 5%;
+    background-color: #fff; /* Nền trắng để nổi bật trên nền hồng của News */
+    text-align: center;
+}
+
+.video-subtitle {
+    color: #694403;
+    margin: 15px 0px;
+    font-size: 1.1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.video-screen {
+    background: #8ed6ff; /* Màu viền ngoài */
+    padding: 15px;
+    border-radius: 30px;
+    border: 4px solid #ffcffc;
+    box-shadow: 15px 15px 0px #ffe6a3; /* Bóng đổ xanh dương đặc trưng */
+    overflow: hidden;
+    line-height: 0; /* Khử khoảng cách thừa dưới video */
+}
+
+.video-screen video {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+    .video-screen {
+        padding: 8px;
+        box-shadow: 8px 8px 0px #8ed6ff;
+    }
+    .video-showcase {
+        padding: 50px 5%;
     }
 }
 
@@ -532,7 +614,7 @@
 .process-story p {
     line-height: 1.6;
     margin-bottom: 15px;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
 }
 
 .wish-note {
@@ -1156,7 +1238,7 @@ details[open] summary::after {
 }
 
 .faq-footer p {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 1.2rem;
 }
 
@@ -1338,7 +1420,7 @@ details[open] summary::after {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Chia cột cân đối */
+    grid-template-columns: 2fr 0.75fr 2fr 1.25fr; 
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -1384,7 +1466,7 @@ details[open] summary::after {
 }
 
 .footer-links a:hover, .email-link:hover {
-    color: #fff;
+    color: #ffcffc;
     padding-left: 5px;
 }
 

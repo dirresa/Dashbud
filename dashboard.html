@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background: #ffcffc;"> <div class="dashboard-container">
-        <h2 class="section-title">Hi, Productive Bud!</h2>
+        <h1 class="section-title">Hi, Productive Bud!</h1>
 
         <div class="char-picker">
             <h3>Choose your buddy:</h3>
@@ -26,11 +26,13 @@
             </div>
 
             <div class="stats-box">
+                <p>Today goal: Write a 1000-word essay!</p>
                 <p>Productivity Level: <span id="percentText">0%</span></p>
                 <div class="progress-container">
                     <div id="myBar" class="progress-bar"></div>
                 </div>
-
+                
+                
                 <div class="input-group">
                     <input type="number" id="wordCount" placeholder="Enter words written today...">
                     <button onclick="updateProgress()" class="cta-btn" style="margin-top:0">Update</button>
